@@ -26,11 +26,11 @@ export class AppModule {
     },
     {
       path: 'services',
-      name: 'Angebote'
+      name: 'Leistungen'
     },
     {
       path: 'gallery',
-      name: 'Gallerie'
+      name: 'Referenzen'
     },
     {
       path: 'impressum',
