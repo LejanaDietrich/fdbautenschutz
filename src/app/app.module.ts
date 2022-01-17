@@ -14,4 +14,27 @@ import { AppComponent } from './app.component';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  tabs = [
+    {
+      path: 'home',
+      name: 'Startseite'
+    },
+    {
+      path: 'contact',
+      name: 'Kontakt'
+    },
+    {
+      path: 'services',
+      name: 'Angebote'
+    },
+    {
+      path: 'gallery',
+      name: 'Gallerie'
+    },
+    {
+      path: 'impressum',
+      name: 'Impressum und Datenschutz'
+    }
+  ];
+}
