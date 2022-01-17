@@ -1,14 +1,15 @@
 <ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <app-header></app-header>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large">Tab 1</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+
+
+  <ion-router-outlet id="main-content" [class]="showHeader ? 'show-header' : 'hide-header'" [animated]="false"></ion-router-outlet>
   </ion-content>
 
-  <ion-router-outlet></ion-router-outlet>
+
 </ion-app>

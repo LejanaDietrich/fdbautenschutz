@@ -1,0 +1,34 @@
+<div class="header">
+  <img src="./assets/images/logo/logo-white.svg" class="logo" [routerLink]="['/']">
+
+  <div class="navigation-right" desktop>
+    <ion-button fill="clear" color="light"  *ngFor="let entry of menuEntries; let i = index" [routerLink]="[entry.url]">
+      {{ entry.title}}
+      <ion-text *ngIf="entry.icon == 'cart' && cartDataService?.order?.ANZPOS > 0" class="cart-stamp" style="font-size: 5 !important">
+        <span class="cart-number" style="margin-top: 3px;"> {{cartDataService?.order?.ANZPOS}} </span>
+      </ion-text>
+      <ion-icon *ngIf="entry.icon" class="cart-icon" [name]="entry.icon"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="navigation-right" mobile>
+    <ion-button fill="clear" color="light" routerLink="/basket" mobile>
+      <ion-text *ngIf="cartDataService?.order?.ANZPOS > 0" class="cart-stamp" style="font-size: 5 !important">
+        <span class="cart-number" style="margin-top: 3px;"> KART} </span>
+      </ion-text>
+      <ion-icon class="cart-icon" name="cart"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" color="light" mobile (click)="toggleMobileMenu()">
+      <ion-icon [name]="isMobileMenuOpen ? 'close-outline' : 'menu-outline'"></ion-icon>
+    </ion-button>
+  </div>
+
+</div>
+<div [style]="isMobileMenuOpen ? '--height: var(--full-height)' : '--height: 0'" class="mobile-menu">
+  <div class="entries">
+    <ion-button fill="clear" color="light" size="large" *ngFor="let entry of menuEntries; let i = index" [routerLink]="[entry.url]" (click)="toggleMobileMenu()">
+      {{ entry.title}}
+      <ion-icon *ngIf="entry.icon" [name]="entry.icon"></ion-icon>
+    </ion-button>
+  </div>
+</div>
