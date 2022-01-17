@@ -29,7 +29,7 @@ export class AppModule {
       name: 'Leistungen'
     },
     {
-      path: 'gallery',
+      path: 'references',
       name: 'Referenzen'
     },
     {
