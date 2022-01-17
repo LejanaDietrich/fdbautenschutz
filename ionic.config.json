@@ -1,0 +1,7 @@
+{
+  "name": "fdbautenschutz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
